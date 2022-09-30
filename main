@@ -1,0 +1,30 @@
+# TODO 1. Create a screen
+# TODO 2. Create and move a paddle
+# TODO 3. Create another paddle
+# TODO 4. Create a ball and make it move
+# TODO 5. Detect wall collision with wall and bounce
+# TODO 6. Detect collision with paddle
+# TODO 7. Detect when paddle misses
+# TODO 8. Keep score
+
+from turtle import Screen
+from paddle import CreatePaddle
+
+screen = Screen()
+screen.bgcolor("black")
+screen.setup(width=800, height=600)
+screen.title("PONG")
+screen.listen()
+paddle = CreatePaddle()
+screen.onkey(paddle.move_up, "Up")
+screen.onkey(paddle.move_down, "Down")
+
+
+# game_is_on = True
+# while game_is_on:
+#     for _ in range(100):
+#         paddle.move_up()
+#     for _ in range(100):
+#         paddle.move_down()
+
+screen.exitonclick()
