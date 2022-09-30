@@ -1,0 +1,23 @@
+from turtle import Turtle
+START_POS = (350, 0)
+MOVE_DIST = 20
+
+
+class CreatePaddle(Turtle):
+
+    def __init__(self):
+        super().__init__()
+        self.penup()
+        self.goto(START_POS)
+        self.seth(90)
+        self.shape("square")
+        self.color("white")
+        self.shapesize(stretch_len=5)
+
+    def move_up(self):
+        new_y = self.ycor() + 20
+        self.goto(350, new_y)
+
+    def move_down(self):
+        new_y = self.ycor() - 20
+        self.goto(350, new_y)
